@@ -1,4 +1,4 @@
-package ClassPractice_Car;
+package classPractice_Car;
 //하나의 소스 파일에는 하나의 클래스가 있는것이 바람직하지만, 지금은 클래스를 생성하고 객체를 생성, 사용하는 연습을 하는 것이니 두개의 클래스를 만들었다
 //생성자는 여러개를 만들 수 있다.
 //생성자의 오버로딩 : 매개변수를 달리하는 생성자를 여러 개 선언하는 것을 말한다.
@@ -40,7 +40,7 @@ public class Car4_Constructor_OverLoding {
 
 	public static void main(String[] args) {
 		Car4 c1 = new Car4(); //1번 생성자 선택
-		System.out.println("c1-1번생성자 : " + c1.company);
+		System.out.println("c1-1번생성자 : " + c1.company + c1.model);
 		
 		Car4 c2 = new Car4("SORENTO");
 		System.out.println("c2-2번생성자 : " + c2.company + ", " + c2.model);

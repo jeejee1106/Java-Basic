@@ -1,4 +1,4 @@
-package ClassPractice_Car;
+package classPractice_Car;
 //하나의 소스 파일에는 하나의 클래스가 있는것이 바람직하지만, 지금은 클래스를 생성하고 객체를 생성, 사용하는 연습을 하는 것이니 두개의 클래스를 만들었다
 //클래스에 필드(인스턴스변수, 클래스변수)선언
 class Car {	
