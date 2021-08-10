@@ -29,7 +29,7 @@ class Bbb extends Aaa {
 	@Override 
 	public void process() {  //부모 클래스의 메서드를 끌어오는 오버라이드! 부모메서드에 나(자식)의 메서드를 추가하는?? 그런거...
 		// TODO Auto-generated method stub
-		super.process();
+//		super.process();
 		System.out.println("핸드폰 번호 : " + hp);
 	}
 }
