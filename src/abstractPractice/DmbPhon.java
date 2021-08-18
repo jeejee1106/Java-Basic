@@ -12,3 +12,4 @@ public class DmbPhon extends Phon{
 
 }
 //炎秤炎秤炎秤生嬢で錠神っしぉぐぉしぞぞししししいい
+//炎秤 祢習test. ID,PASS研 store馬走 省紹聖 凶 塘笛生稽 薦企稽 祢習亜 吃猿?
