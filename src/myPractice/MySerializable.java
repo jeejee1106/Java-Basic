@@ -41,7 +41,8 @@ class Player implements Serializable{
 	
 }
 public class MySerializable {
-	static final String FILENAME = "C:\\Users\\PC\\Desktop\\study\\KIA_Player.txt";
+//	static final String FILENAME = "C:\\Users\\PC\\Desktop\\study\\KIA_Player.txt";
+	static final String FILENAME = "D:\\bitjava0719\\javawork\\KIA_Player.txt";
 	Vector<Player> list = new Vector<Player>(); //Player class를   Vector에 저장
 	Scanner sc = new Scanner(System.in);
 	
@@ -53,8 +54,19 @@ public class MySerializable {
 	public void addPlayer() {
 		System.out.println("등록할 선수명을 입력해주세요.");
 		String name = sc.nextLine();
-		System.out.println("등번호를 입력해주세요.");
-		int backNumber = Integer.parseInt(sc.nextLine());
+		int backNumber =0; //여기서 변수를 초기화 하면서 선언해줘야 try문에서도 쓸 수 있고, 이 메서드의 다른 곳에서도 쓰일 수 있기 때문에
+						   //변수 선언을 밖에서 따로 해주는게 좋다.(try문에서 선언하면 try문 밖에서 변수를 쓰려고 할 때 에러가 발생한다.)
+		while(true) {
+			try {
+				System.out.println("등번호를 입력해주세요.");
+				backNumber = Integer.parseInt(sc.nextLine());
+				break;
+			} catch(NumberFormatException e) {
+				System.out.println(e.getMessage());
+				continue;
+			}
+		}
+		
 		System.out.println("포지션을 입력해주세요");
 		String position = sc.nextLine();
 		
@@ -104,8 +116,8 @@ public class MySerializable {
 	
 	
 	public void objectOutputFile() { //Vector에 추가한 list를 직렬화 시켜서 지정된 경로로 내보내기 위한 메서드
-		FileOutputStream fos = null; //왜 널값을 주는지 다시 공부하기
-		ObjectOutputStream oos = null; //마찬가지
+		FileOutputStream fos = null; //왜 null을 주냐면 try안에서 객체생성을 하면 로컬변수가 되서 파이널문에서 사용을 못한다.
+		ObjectOutputStream oos = null; //그래서 전역변수로 선언해주는 것.
 		
 		try {
 			fos = new FileOutputStream(FILENAME); //파일을 FILENAME으로 내보낼거다.
@@ -130,8 +142,8 @@ public class MySerializable {
 	}
 	
 	public void objectInputFile() { //직렬화된 파일을 다시 읽기 위한 메서드 = 역직렬화를 위한 메서드
-		FileInputStream fis = null; //왜 null을 주는지 다시 공부하기
-		ObjectInputStream ois = null; //마찬가지
+		FileInputStream fis = null; //왜 null을 주냐면 try안에서 객체생성을 하면 로컬변수가 되서 파이널문에서 사용을 못한다.
+		ObjectInputStream ois = null; //그래서 전역변수로 선언해주는 것.
 		
 		try {
 			fis = new FileInputStream(FILENAME); //FILENAME 경로에 있는 파일을 읽겠다.
@@ -147,7 +159,14 @@ public class MySerializable {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) { //class파일이 없을 수 있으니 발생하는 예외인 듯!
 			e.printStackTrace();
-		} 
+		} finally {
+			try {
+				ois.close();
+				fis.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	
