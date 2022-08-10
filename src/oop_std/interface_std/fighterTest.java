@@ -1,4 +1,4 @@
-package interface_Unit;
+package oop_std.interface_std;
 
 abstract class unit{
 	int x, y;

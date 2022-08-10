@@ -1,4 +1,4 @@
-package InheritancePractice;
+package oop_std.Inheritance_std;
 
 class Parent{ //부모(조상)클래스
 	

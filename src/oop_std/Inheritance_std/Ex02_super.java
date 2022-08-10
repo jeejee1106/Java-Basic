@@ -1,4 +1,4 @@
-package InheritancePractice;
+package oop_std.Inheritance_std;
 
 class Parent2 {
 	private String name;

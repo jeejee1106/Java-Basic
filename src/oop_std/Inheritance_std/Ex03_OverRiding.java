@@ -1,4 +1,4 @@
-package InheritancePractice;
+package oop_std.Inheritance_std;
 
 class Aaa{
 	private String school;
