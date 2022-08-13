@@ -2,13 +2,14 @@ package generic_std;
 
 import java.util.ArrayList;
 
-class Tv {}
-class Audio {}
+class Tv extends Product{}
+class Audio extends Product{}
+class Product{}
 
-public class 타입변수 {
+public class TypeVariable {
     /**
-     * 타입 변수 : 지네릭클래스에 들어가는 타입을 변수 E, Y, EE등의 변수로 지정하는 것
-     * 객체를 생성할 시 타입변수 대신 실제 타입을 지정해야한다.
+     * 타입 변수 : 지네릭클래스(List, Map 등)를 작성할 때, Object타입을 E, Y, EE등의 변수로 지정하는 것
+     * but, 객체를 생성할 시에는 타입변수 대신 실제 타입을 지정해야한다.
      */
     public static void main(String[] args) {
         //제네릭 클래스를 사용하기 전
@@ -29,5 +30,13 @@ public class 타입변수 {
 //        ArrayList<Object> list3 = new ArrayList<Tv>(); //에러
         //참조변수에 대입된 타입과 생성자에 대입된 타입은 같아야한다.
         //타입이 다른 경우도 있긴 하지만 기본적으로는 같아야한다.
+
+        //제네릭 클래스 사용 #3
+        //매개변수의 다형성은 성립
+        ArrayList<Product> list4 = new ArrayList<Product>(); //여전히 참조변수에 대입된 타입과 생성자에 대입된 타입은 같아야 하지만,
+//        ArrayList<Product> list4 = new ArrayList<Tv>(); //에러(타입 불일치 - 참조변수,생성자간의 타입일치 룰은 상속관계도 허용하지 않음.)
+        list4.add(new Product()); // 메서드의 매개변수는 다형성이 성립한다.
+        list4.add(new Tv()); //Tv클래스는 Product를 상속받았기 때문에 사용가능.
+        list4.add(new Audio()); //마찬가지
     }
 }
