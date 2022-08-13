@@ -6,7 +6,7 @@ class Tv extends Product{}
 class Audio extends Product{}
 class Product{}
 
-public class TypeVariable {
+public class No2_TypeVariable {
     /**
      * 타입 변수 : 지네릭클래스(List, Map 등)를 작성할 때, Object타입을 E, Y, EE등의 변수로 지정하는 것
      * but, 객체를 생성할 시에는 타입변수 대신 실제 타입을 지정해야한다.
