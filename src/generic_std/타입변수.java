@@ -5,7 +5,7 @@ import java.util.ArrayList;
 class Tv {}
 class Audio {}
 
-public class TypeVariable {
+public class 타입변수 {
     /**
      * 타입 변수 : 지네릭클래스에 들어가는 타입을 변수 E, Y, EE등의 변수로 지정하는 것
      * 객체를 생성할 시 타입변수 대신 실제 타입을 지정해야한다.
