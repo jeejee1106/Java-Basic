@@ -1,8 +1,5 @@
 package generic_std;
 
-import java.awt.*;
-import java.awt.desktop.AppForegroundListener;
-import java.io.StringReader;
 import java.util.ArrayList;
 
 interface Eatable {}
