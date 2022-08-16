@@ -12,6 +12,7 @@ class Apple extends Fruit { public String toString() {return "Apple";}}
 class Grape extends Fruit { public String toString() {return "Grape";}}
 class Toy                 { public String toString() {return "Toy";}}
 
+//Box클래스는 어떤 타입이 들어오던 상관이 없다.
 class Box<T>{
     ArrayList<T> list = new ArrayList<>(); //item을 저장할 리스트
     void add(T item) {list.add(item);} //박스에 item을 추가할 메서드
@@ -20,7 +21,8 @@ class Box<T>{
     public String toString() {return list.toString();}
 }
 
-class FruitBox<T extends Fruit & Eatable> extends Box<T> {} //T에는 Eatable을 구현했거나 Fruit의 자손만 들어올 수 있다.
+//FruitBox클래스는 Eatable을 구현했거나 Fruit의 자손타입만 들어올 수 있다.
+class FruitBox<T extends Fruit & Eatable> extends Box<T> {} //즉, T에는 Eatable을 구현했거나 Fruit의 자손만 들어올 수 있다.
 
 public class No5_Interface {
     public static void main(String[] args) {

@@ -10,6 +10,10 @@ public class No2_TypeVariable {
     /**
      * 타입 변수 : 지네릭클래스(List, Map 등)를 작성할 때, Object타입을 E, Y, EE등의 변수로 지정하는 것
      * but, 객체를 생성할 시에는 타입변수 대신 실제 타입을 지정해야한다.
+     *
+     * 제약사항
+     * 1. static필드에 타입변수 사용 불가
+     * 2. 배열, 객체배열을 생성할 때 타입변수 사용 불가. but 타입변수로 배열 선언은 가능
      */
     public static void main(String[] args) {
         //제네릭 클래스를 사용하기 전
@@ -39,4 +43,19 @@ public class No2_TypeVariable {
         list4.add(new Tv()); //Tv클래스는 Product를 상속받았기 때문에 사용가능.
         list4.add(new Audio()); //마찬가지
     }
+
+
+    class Box<T> {
+        //제네릭 클래스의 제약사항 #1
+//        static T item; //에러
+//        static int compare(T t1, T t2) {return 0;} //에러
+
+        //제네릭 클래스의 제약사항 #2
+        T[] itemArr; //Ok 객체배열 '선언'!
+
+//        T[] toArray() {
+//            T[] tmpArr = new T[itemArr.length]; //에러. 지네릭 배열 '생성' 불가.
+//        }
+
+   }
 }
