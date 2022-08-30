@@ -1,6 +1,6 @@
 package thread_std;
 
-public class No6_ThreadBasic {
+public class No1_ThreadBasic {
 
     /**
      * Thread 쓰레드 :
@@ -13,6 +13,10 @@ public class No6_ThreadBasic {
      * : Thread클래스를 상속받아 run메서드로 쓰레드를 구현
      * 2. Runnable인터페이스 구현
      * : Runnable인터페이스의 run메서드를 구현하여 쓰레드를 구현
+     *
+     * 쓰레드의 장단점
+     * 장점 : 한 번에 두 가지의 일을 실행할 수 있다. ex) 채팅 시 파일을 다운로드 받는 동시에 채팅을 보낼 수 있다.
+     * 단점 : 싱글쓰레드보다 실행 시간이 더 걸린다. ex) 채팅 시 파일만 다운로드 받는 시간 < 파일다운 + 채팅 시간
      */
 
     public static void main(String[] args) {
