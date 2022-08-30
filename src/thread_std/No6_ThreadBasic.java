@@ -8,11 +8,11 @@ public class No6_ThreadBasic {
      * 프로세스 안에 쓰레드가 한 개면 싱글쓰레드, 두 개 이상이면 멀티쓰레드
      * 프로세스를 하나 더 만드는 것 보다, 프로세스 안에 쓰레드를 하나 더 만들어 주는 것이 효율적이다.
      *
-     * 쓰레드를 사용하는 방법 :
+     * 쓰레드를 사용하는 방법
      * 1. Thread클래스 상속받기
-     * -> Thread클래스를 상속받아 run메서드로 쓰레드를 구현
+     * : Thread클래스를 상속받아 run메서드로 쓰레드를 구현
      * 2. Runnable인터페이스 구현
-     * -> Runnable인터페이스의 run메서드를 구현하여 쓰레드를 구현
+     * : Runnable인터페이스의 run메서드를 구현하여 쓰레드를 구현
      */
 
     public static void main(String[] args) {
