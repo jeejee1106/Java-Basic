@@ -19,13 +19,13 @@ public class No6_1_sleep {
 //        } catch (InterruptedException e) {
 //            //아무 코드도 없어도 됨. 에러가 나서 try-catch를 넣은게 아니기 때문에
 //        }
-        delay(2000);
+        delay(2000); // -> 주석 걸고 풀면서 sleep메서드가 있고 없고의 차이 비교하기
         System.out.println("<<main 종료>>");
     }
 
     static void delay(long millis) {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(2000); //main쓰레드가 잠이 드는 거임
         } catch (InterruptedException e) {
             //아무 코드도 없어도 됨. 에러가 나서 try-catch를 넣은게 아니기 때문에
         }
