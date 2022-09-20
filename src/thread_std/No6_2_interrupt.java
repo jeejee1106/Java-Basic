@@ -4,7 +4,9 @@ import javax.swing.*;
 
 public class No6_2_interrupt {
     /**
-     * interrupt() : 현재 쓰레드를 지정된 시간동안 멈추게 한다.
+     * interrupt() : 대기상태(waiting)인 쓰레드를 실행대기상태(runnable)로 만든다.
+     * - 대기상태인 쓰레드? sleep(), join(), wait() 등등
+     * - interrupt() : 쓰레드의 interrupted상태를 false에서 true로 변경
      * - isInterrupted() : 해당 쓰레드가 인터럽트 되었는가? (boolean)
      * - interrupted() : 해당 쓰레드가 인터럽트 되었는가?(boolean)
      * 위 두 메서드의 차이점? interrupted()는 스태틱 메서드이다. isInterrupted()는 지정한 메서드가 인터럽트 되었는지 확인한다면,
