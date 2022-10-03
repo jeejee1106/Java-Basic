@@ -17,14 +17,26 @@ public class No1_Lambda {
 
     public static void main(String[] args) {
         //사실 람다는 아래와 같은 형식의 익명 객체이다.
-        Object obj = new Object(){
-            int max(int a, int b) {
-                return a > b ? a : b;
-            }
-        };
-        
+//        Object obj = new Object(){
+//            int max(int a, int b) {
+//                return a > b ? a : b;
+//            }
+//        };
+
+//        MyFunction myFunction = new MyFunction(){
+//            public int max(int a, int b) { //오버라이딩 규칙으로 인해 public을 써줘야한다.
+//                return a > b ? a : b;
+//            }
+//        };
+        //위 코드를 람다식으로!(람다식(익명 객체)을 다루기 위한 참조변수의 타입은 함수형 인터페이스로 한다.)
+        MyFunction myFunction = (a, b) -> a > b ? a : b;
+
+        int value = myFunction.max(3, 5); //함수형 인터페이스
+        System.out.println("value = " + value);
     }
+}
 
-
-
+@FunctionalInterface //함수형 인터페이스는 단 하나의 추상 메서드만 가져야함.
+interface MyFunction {
+    public abstract int max(int a, int b);
 }
